@@ -1,8 +1,8 @@
 ﻿using System;
 
 public class GameMap : EmptyMap {
-    public GameMap(Int32 length, Int32 width, DynamicGameObject gameMapTemplate, DynamicGameObject concreteCubeTemplate) 
-        : base(length, width, gameMapTemplate) {
+    public GameMap(Int32 length, Int32 width, DynamicGameObject floorCubeTemplate, DynamicGameObject concreteCubeTemplate) 
+        : base(length, width, floorCubeTemplate) {
         InitializeConcreteCubes(concreteCubeTemplate);
     }
 

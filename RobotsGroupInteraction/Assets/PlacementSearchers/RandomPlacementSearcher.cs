@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-public abstract class RandomPlacement : SelectivePlacement {
+public abstract class RandomPlacementSearcher : SelectivePlacementSearcher {
     protected override IEnumerable<CellOnField> GetPlacements(IEnumerable<CellOnField> availableCells, Int32 elementsCount) {
         var result = new List<CellOnField>();
         var listAvailableCells = availableCells.ToList();

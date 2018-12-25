@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class GameElements<T> where T : BasePlacement, new() {
+public class GameElements<TPlacementSearcher> where TPlacementSearcher : BasePlacementSearcher, new() {
     public DynamicGameObject Element { get; private set; }
     private Int32 elementsCount;
 
@@ -10,7 +10,5 @@ public class GameElements<T> where T : BasePlacement, new() {
         this.elementsCount = elementsCount;
     }
 
-    public IEnumerable<CellOnField> GetPlacements(Field field) {
-        return new T().GetPlacements(field, elementsCount);
-    }
+    public IEnumerable<CellOnField> GetPlacements(Field field) => new TPlacementSearcher().GetPlacements(field, elementsCount);
 }

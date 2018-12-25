@@ -7,13 +7,9 @@ public abstract class DynamicGameObject {
 
     protected abstract String GetPrefabName();
 
-    public GameObject ToGameObject() {
-        return Resources.Load<GameObject>(GetPrefabName());
-    }
+    public GameObject ToGameObject() => Resources.Load<GameObject>(GetPrefabName());
 
-    public void AddScriptType(Type scriptType) {
-        typesForAddedScripts.Add(scriptType);
-    }
+    public void AddScriptType(Type scriptType) => typesForAddedScripts.Add(scriptType);
 
     public GameObject Create() {
         var gameObject = CreateGameObject();
@@ -22,9 +18,7 @@ public abstract class DynamicGameObject {
         return gameObject;
     }
 
-    protected virtual GameObject CreateGameObject() {
-        return GameObject.Instantiate<GameObject>(ToGameObject());
-    }
+    protected virtual GameObject CreateGameObject() => UnityEngine.Object.Instantiate(ToGameObject());
 
     public Boolean IsDerived(System.Object obj) {
         if(obj == null)

@@ -1,12 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.ViewElements {
-    public class RobotView : MonoBehaviour {
-        public Int32 StartPositionX = 0;
-        public Int32 StartPositionY = 0;
+public class RobotView : MonoBehaviour {
+    public Int32 StartPositionX = 0;
+    public Int32 StartPositionY = 0;
 
-        public Single MovementSpeed = 1;
-        public Single RotationSpeed = 50;
-    }
+    public Single MovementSpeed = 1;
+    public Single RotationSpeed = 50;
 }

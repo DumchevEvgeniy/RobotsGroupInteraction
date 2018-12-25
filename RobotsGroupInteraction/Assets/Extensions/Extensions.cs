@@ -5,9 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class EnumerableExtensions {
-    public static Boolean IsEmpty<T>(this IEnumerable<T> collection) {
-        return collection.Count() == 0;
-    }
+    public static Boolean IsEmpty<T>(this IEnumerable<T> collection) => collection == null || !collection.Any();
 }
 
 public static class GameObjectExtensions {
@@ -83,7 +81,7 @@ public static class VectorExtensions {
 
 public static class SceneExtensions {
     public static GameObject FindPlayer(this Scene scene) {
-        return GetAllElementsByTag(scene, Player.tag).FirstOrDefault();
+        return GetAllElementsByTag(scene, Robot.tag).FirstOrDefault();
     }
 
     public static IEnumerable<GameObject> FindAllBreakCube(this Scene scene) {
@@ -98,15 +96,15 @@ public static class SceneExtensions {
         return scene.GetRootGameObjects().Where(g => g.CompareTag(tag));
     }
 
-    public static Field GetField(this Scene scene) {
-        var map = scene.GetAllElementsByTag("Map").FirstOrDefault();
-        if(map == null)
-            return null;
-        var level = map.GetComponent<Level>();
-        if(level == null)
-            return null;
-        return level.Map.Field;
-    }
+    //public static Field GetField(this Scene scene) {
+    //    var map = scene.GetAllElementsByTag("Map").FirstOrDefault();
+    //    if(map == null)
+    //        return null;
+    //    var level = map.GetComponent<MapViewAggregator>();
+    //    if(level == null)
+    //        return null;
+    //    return level.Map.Field;
+    //}
 }
 
 public static class NumberExtensions {

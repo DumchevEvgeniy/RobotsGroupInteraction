@@ -4,18 +4,19 @@ using UnityEngine;
 public class EmptyMap : BaseMap {
     private GameObject gameMap;
 
-    public EmptyMap(Int32 length, Int32 width, DynamicGameObject gameMapTemplate) 
+    public EmptyMap(Int32 length, Int32 width, DynamicGameObject floorCubeTemplate) 
         : base(length, width) {
-        InitializeMap(gameMapTemplate);
+        InitializeMap(floorCubeTemplate);
     }
 
-    private void InitializeMap(DynamicGameObject gameMapTemplate) {
-        gameMap = gameMapTemplate.Create();
-        Single offsetByX = (Int32)(Width / 2.0);
-        Single offsetByZ = (Int32)(Length / 2.0);
-        gameMap.transform.position = new Vector3(offsetByX, 0, offsetByZ);
-        gameMap.transform.localScale = new Vector3(Width, gameMap.transform.localScale.y, Length);
-        gameMap.transform.rotation = new Quaternion();
+    private void InitializeMap(DynamicGameObject floorCubeTemplate) {
+        for(Int32 offsetByX = 0; offsetByX < Width; offsetByX++)
+            for(Int32 offsetByZ = 0; offsetByZ < Length; offsetByZ++) {
+                gameMap = floorCubeTemplate.Create();
+                gameMap.transform.position = new Vector3(offsetByX, 0, offsetByZ);
+                gameMap.transform.rotation = new Quaternion();
+                //gameMap.transform.localScale = new Vector3(Width, gameMap.transform.localScale.y, Length);
+            }
     }
 
     public void CreateAll() {

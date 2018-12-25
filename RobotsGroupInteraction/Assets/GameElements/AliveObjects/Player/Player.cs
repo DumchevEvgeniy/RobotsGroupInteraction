@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Player : MovementObject {
+public class Robot : MovementObject {
     public const String tag = "Player";
     public String PrefabName { get; set; }
     public Int32 StartGamePoints { get; set; }

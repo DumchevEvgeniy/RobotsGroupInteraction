@@ -1,12 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BreakCube : DynamicGameObject {
-    public const String tag = "BreakCube";
+    public const string tag = "BreakCube";
 
-    protected override String GetPrefabName() {
-        return "Prefabs/BreakCube";
-    }
+    protected override string GetPrefabName() => PrefabTypes.BreakCube;
 
     protected override GameObject CreateGameObject() {
         var sandCube = base.CreateGameObject();

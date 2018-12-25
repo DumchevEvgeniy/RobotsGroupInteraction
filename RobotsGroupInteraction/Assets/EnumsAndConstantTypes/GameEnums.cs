@@ -12,14 +12,3 @@ public enum EnemySpeed : Int32 {
     Normal = 5,
     Fast = 10
 }
-
-public enum BonusTypes {
-    Bombs,
-    Flames,
-    Speed,
-    Wallpass,
-    Detonator,
-    Bombpass,
-    Flamepass,
-    Mystery
-}

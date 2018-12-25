@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 
-namespace Assets.ViewElements {
-    public class MapViewAggregator : MonoBehaviour {
-        public SmartMap Map { get; set; }
+public class MapViewAggregator : MonoBehaviour {
+    private void Start() {
+        var fieldView = GetComponent<FieldView>();
+        if (fieldView == null)
+            return;
 
-        private void Start() {
-            var fieldView = GetComponent<FieldView>();
-            if (fieldView == null)
-                return;
+        var destinationPlaceView = GetComponent<DestinationPlaceView>();
+        if (destinationPlaceView == null)
+            return;
 
-            var destinationPlaceView = GetComponent<DestinationPlaceView>();
-            if (destinationPlaceView == null)
-                return;
+        var robotViews = GetComponents<RobotView>();
 
-            var robotViews = GetComponents<RobotView>();
-            
-            Map = new SmartMap(fieldView.Length, fieldView.Width, new MapFloor(), new ConcreteCube());
-            Map.AddElements<RandomPlacementWithPlayerDistance>(new BreakCube(), 10);
-            Map.CreateAll();
-        }
+        var map = new SmartMap(fieldView.Length, fieldView.Width, new ConcreteCube(), new ConcreteCube());
+        map.AddElements<RandomEmptyPlacementSearcher>(new BreakCube(), 10);
+
+        //map.AddElements<RandomEmptyPlacementSearcher>(new Robot())
+        //роботов
+        //препятствия
+
+        //в основании сделать кубы - подкрашивать входящие в область пребытия
+
+        map.CreateAll();
     }
 }
