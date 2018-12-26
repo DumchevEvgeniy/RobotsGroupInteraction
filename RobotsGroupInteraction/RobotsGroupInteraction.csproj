@@ -337,10 +337,14 @@
     <Compile Include="Assets\ElementSettings\AliveObjectSittings\PlayerSettings\WallpassPlayerSettings.cs" />
     <Compile Include="Assets\ElementSettings\BreakCubeSettings.cs" />
     <Compile Include="Assets\ElementSettings\CameraSettings.cs" />
+    <Compile Include="Assets\EnumsAndConstantTypes\ElementTag.cs" />
     <Compile Include="Assets\EnumsAndConstantTypes\GameEnums.cs" />
     <Compile Include="Assets\EnumsAndConstantTypes\PrefabTypes.cs" />
-    <Compile Include="Assets\Extensions\Extensions.cs" />
-    <Compile Include="Assets\Game\PlaneRay.cs" />
+    <Compile Include="Assets\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Assets\Extensions\GameObjectExtensions.cs" />
+    <Compile Include="Assets\Extensions\NumberExtensions.cs" />
+    <Compile Include="Assets\Extensions\SceneExtensions.cs" />
+    <Compile Include="Assets\Extensions\VectorExtensions.cs" />
     <Compile Include="Assets\GameElements\AliveObjects\Enemy\Enemy.cs" />
     <Compile Include="Assets\GameElements\AliveObjects\Enemy\SmartEnemy.cs" />
     <Compile Include="Assets\GameElements\AliveObjects\MovementObject.cs" />

@@ -1,5 +1,5 @@
-﻿public class ConcreteCube : DynamicGameObject {
-    public const string tag = "ConcreteCube";
+﻿public class FoundationCube : DynamicGameObject {
+    public const string tag = ElementTag.FoundationCube;
     
     protected override string GetPrefabName() => PrefabTypes.ConcreteCube;
 }

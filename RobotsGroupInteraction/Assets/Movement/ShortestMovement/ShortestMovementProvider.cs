@@ -45,7 +45,7 @@ public class ShortestMovementProvider : ShortestMovement, IEnumerable<Ponderable
     }
     private IRoute<CellOnField> DefaultRouteSeacher {
         get {
-            var barrierTypes = new List<Type> { typeof(ConcreteCube) };
+            var barrierTypes = new List<Type> { typeof(FoundationCube) };
             var routeSeacher = new RouteSeacher<CellOnField>(barrierTypes);
             return new RouteFromCell<CellOnField>(routeSeacher);
         }

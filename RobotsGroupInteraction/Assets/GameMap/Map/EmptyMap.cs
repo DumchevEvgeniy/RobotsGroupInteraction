@@ -12,10 +12,11 @@ public class EmptyMap : BaseMap {
     private void InitializeMap(DynamicGameObject floorCubeTemplate) {
         for(Int32 offsetByX = 0; offsetByX < Width; offsetByX++)
             for(Int32 offsetByZ = 0; offsetByZ < Length; offsetByZ++) {
+                Foundation.GetCell(offsetByX, offsetByZ).AddGameObject(floorCubeTemplate);
+
                 gameMap = floorCubeTemplate.Create();
                 gameMap.transform.position = new Vector3(offsetByX, 0, offsetByZ);
                 gameMap.transform.rotation = new Quaternion();
-                //gameMap.transform.localScale = new Vector3(Width, gameMap.transform.localScale.y, Length);
             }
     }
 

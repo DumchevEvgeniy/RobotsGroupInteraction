@@ -17,7 +17,5 @@ public class Cell {
             return false;
         return IndexRow == cell.IndexRow && IndexColumn == cell.IndexColumn;
     }
-    public override Int32 GetHashCode() {
-        return IndexRow | IndexColumn;
-    }
+    public override Int32 GetHashCode() => IndexRow | IndexColumn;
 }

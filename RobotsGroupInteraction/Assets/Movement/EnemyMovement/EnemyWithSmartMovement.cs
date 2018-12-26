@@ -34,7 +34,7 @@ public class EnemyWithSmartMovement : EnemyWithSmoothMovement {
     protected virtual IRoute<CellOnField> RouteSeacher {
         get {
             var barrierTypes = new List<Type>();
-            barrierTypes.Add(typeof(ConcreteCube));
+            barrierTypes.Add(typeof(FoundationCube));
             if(!smartEnemySettings.wallpass)
                 barrierTypes.Add(typeof(BreakCube));
             var routeSeacher = new RouteSeacher<CellOnField>(barrierTypes);
@@ -46,7 +46,7 @@ public class EnemyWithSmartMovement : EnemyWithSmoothMovement {
         if(smartEnemySettings == null || field == null)
             return false;
         var enemyPosition = GetCellOnField(gameObject.GetIntegerPosition());
-        var player = gameObject.scene.FindPlayer();
+        var player = gameObject.scene.FindRobot();
         if(player == null)
             return false;
         var playerPositon = GetCellOnField(player.GetIntegerPosition());

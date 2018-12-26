@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class BreakCube : DynamicGameObject {
-    public const string tag = "BreakCube";
+    public const string tag = ElementTag.BreakCube;
 
     protected override string GetPrefabName() => PrefabTypes.BreakCube;
 

@@ -14,16 +14,10 @@ public class GameMap : EmptyMap {
 
     private Boolean IsCellForConcreteCube(CellOnField cell) {
         return OnLeftOrRightBorder(cell.IndexColumn) ||
-                OnTopOrBottomBorder(cell.IndexRow) ||
-                OnNeededPosition(cell.IndexRow, cell.IndexColumn);
+            OnTopOrBottomBorder(cell.IndexRow) ||
+            OnNeededPosition(cell.IndexRow, cell.IndexColumn);
     }
-    private Boolean OnLeftOrRightBorder(Int32 indexColumn) {
-        return indexColumn == 0 || indexColumn == Length - 1;
-    }
-    private Boolean OnTopOrBottomBorder(Int32 indexRow) {
-        return indexRow == 0 || indexRow == Width - 1;
-    }
-    private Boolean OnNeededPosition(Int32 indexRow, Int32 indexColumn) {
-        return indexRow % 2 == 0 && indexColumn % 2 == 0;
-    }
+    private Boolean OnLeftOrRightBorder(Int32 indexColumn) => indexColumn == 0 || indexColumn == Length - 1;
+    private Boolean OnTopOrBottomBorder(Int32 indexRow) => indexRow == 0 || indexRow == Width - 1;
+    private Boolean OnNeededPosition(Int32 indexRow, Int32 indexColumn) => indexRow % 2 == 0 && indexColumn % 2 == 0;
 }

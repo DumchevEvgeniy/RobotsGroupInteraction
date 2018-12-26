@@ -12,12 +12,9 @@ public class CellOnField : Cell {
         Owner = owner;
     }
 
-    public Boolean IsEmpty() {
-        return DynamicGameObjects.IsEmpty();
-    }
-    public void AddGameObject(DynamicGameObject dynamicGameObject) {
-        DynamicGameObjects.Add(dynamicGameObject);
-    }
+    public Boolean IsEmpty() => DynamicGameObjects.IsEmpty();
+
+    public void AddGameObject(DynamicGameObject dynamicGameObject) => DynamicGameObjects.Add(dynamicGameObject);
     public void RemoveGameElement(Type elementType) {
         var element = DynamicGameObjects.FirstOrDefault(el => el.IsDerived(elementType));
         if(element != null)

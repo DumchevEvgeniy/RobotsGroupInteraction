@@ -15,7 +15,7 @@ public class CameraSettings : MonoBehaviour {
 
     private void FixedUpdate() {
         if(player == null)
-            player = gameObject.scene.FindPlayer();
+            player = gameObject.scene.FindRobot();
         if(player != null) {
             var newPosition = player.transform.position + positionOffset;
             transform.Translate((newPosition - oldPosition), Space.World);
